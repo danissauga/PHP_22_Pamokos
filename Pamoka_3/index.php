@@ -22,4 +22,26 @@
 
 echo "Sugeneruoti skaičiai: $a $a2 $a3 $a4 , is kuriu Nuliu yra: $nuliai , Vienetu yra: $vienetai , Dvejetu yra $dvejetai";
 
+$skaicius = rand(1,6);
+
+echo "<h".$skaicius.">". $skaicius . "</h".$skaicius.">";
+
+    $s1 = rand(-10,10);
+    $s2 = rand(-10,10);
+    $s3 = rand(-10,10);
+
+echo "Sugeneruoti skaičiai: $s1 $s2 $s3 , is kuriu yra:<br>";
+
+if ($s1 == 0) {echo '<span style="color:red;">Lygus'.$s1.'</span><br>'; }
+if ($s2 == 0) {echo '<span style="color:red;">Lygus'.$s2.'</span><br>'; }
+if ($s3 == 0) {echo '<span style="color:red;">Lygus'.$s3.'</span><br>'; }
+
+if ($s1 < 0) {echo '<span style="color:green;">Maziau uz 0 yra:'.$s1.'</span><br>'; }
+if ($s2 < 0) {echo '<span style="color:green;">Maziau uz 0 yra:'.$s2.'</span><br>'; }
+if ($s3 < 0) {echo '<span style="color:green;">Maziau uz 0 yra:'.$s3.'</span><br>'; }
+
+if ($s1 > 0) {echo '<span style="color:blue;">Daugiau uz 0 yra:'.$s1.'</span><br>'; }
+if ($s2 > 0) {echo '<span style="color:blue;">Daugiau uz 0 yra:'.$s2.'</span><br>'; }
+if ($s3 > 0) {echo '<span style="color:blue;">Daugiau uz 0 yra:'.$s3.'</span><br>'; }
+
 ?>

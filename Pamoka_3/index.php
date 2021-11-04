@@ -20,6 +20,6 @@
     if ($a3 == 2) {$dvejetai++;}
     if ($a4 == 2) {$dvejetai++;}
 
-echo "Sugeneruoti skaičiai: $a $a2 $a3 $a4 , is kuriu Nuliu yra: $nuliai , Vieneu yra: $vienetai , Dvejetu yra $dvejetai";
+echo "Sugeneruoti skaičiai: $a $a2 $a3 $a4 , is kuriu Nuliu yra: $nuliai , Vienetu yra: $vienetai , Dvejetu yra $dvejetai";
 
 ?>

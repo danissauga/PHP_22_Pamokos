@@ -1,4 +1,7 @@
 <?php
+
+// 8 -ta uzduotis 
+
 $k1 = 1; //Vieneto kaina
 $a1 = rand(5,3000); //gaunamas kiekis
 $n1 = 3; //Nuo 1000 iki 2000 taikoma 3% nuolaida
@@ -26,5 +29,10 @@ if ($a1 >= 2000) {
     $g_kaina = $kaina - $nuolaida; //kaina po nuolaidos
         echo 'Perkamas kiekis: '.$a1. ' vnt., kainuoja '.$kaina.' , taikoma nuolaida '.$n2.'% nuo kiekio: '. $nuolaida. ' kaina po nuolaidos: '. $g_kaina;
     }
+
+// 9 ta uzduotis :
+
+
+
 
 ?>

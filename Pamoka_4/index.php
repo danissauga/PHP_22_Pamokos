@@ -27,11 +27,4 @@ if ($a1 >= 2000) {
         echo 'Perkamas kiekis: '.$a1. ' vnt., kainuoja '.$kaina.' , taikoma nuolaida '.$n2.'% nuo kiekio: '. $nuolaida. ' kaina po nuolaidos: '. $g_kaina;
     }
 
-
-
-
-
-
-
-
 ?>

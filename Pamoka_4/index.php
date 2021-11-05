@@ -1,6 +1,6 @@
 <?php
 
-// 8 -ta uzduotis 
+// 8 -ta uzduotis
 
 $k1 = 1; //Vieneto kaina
 $a1 = rand(5,3000); //gaunamas kiekis
@@ -32,7 +32,68 @@ if ($a1 >= 2000) {
 
 // 9 ta uzduotis :
 
+$a1 = rand(0,100);
+$a2 = rand(0,100);
+$a3 = rand(0,100);
+
+$vidurkis = ($a1+$a2+$a3)/3;
+$kiek = 0;
+
+Echo '<br><br>Aritmetinis vidurkis skaiciu: '.$a1.' '.$a2.' '.$a3.' yra: '. round($vidurkis) .'<br><br>';
+
+$vidurkis = 0;
+
+if (($a1 > 10) && ($a1 < 90)) {$vidurkis +=$a1; $kiek++;}
+if (($a2 > 10) && ($a2 < 90)) {$vidurkis +=$a2; $kiek++;}
+if (($a3 > 10) && ($a3 < 90)) {$vidurkis +=$a3; $kiek++;}
+
+if ($kiek <> 0) {
+    $ats = $vidurkis / $kiek;
+    echo '<br><br>Aritmetinis vidurkis atmetus mazesnius uz 10 ir didesnius uz 90 yra: '. round($ats) .'<br><br>';
+    } else {
+        echo 'Vidurkio is 0 negalima isvesti';
+        }
 
 
+
+// 10 tauzduotis Laikas :)
+$sekundes_plus = rand(0,300);
+
+$valandos = rand(0,23);
+$minutes = rand(0,59);
+$sekundes = rand(0,59);
+
+echo 'Skaitmenis laikrodis ' .$valandos.':'.$minutes.':'.$sekundes.'<br>';
+echo "Pridedamos sekundes: $sekundes_plus<br>";
+
+//skaidom sekundas i minutes ir sekundes:
+
+$n_sec = ($sekundes + $sekundes_plus) % 60;
+$n_min = ($sekundes + $sekundes_plus - $n_sec) / 60;
+
+$f_min = $minutes + $n_min;
+
+$n_time = $valandos.':'. $f_min .':'. $n_sec;
+
+echo "gautnaujas laikas: $n_time <br>";
+
+
+/*$seconds = rand(1,300);
+
+$time = strftime("%R:%S", time());
+echo "<br><br>Prminis laikas: $time";
+$new_time = date($time, time() + $seconds);
+echo "<br><br> Po pridetu sekundziu: $new_time";
+
+echo $times = date("h", time() + 30);
+
+$minutes_to_add = 5;
+
+$time = new DateTime('2011-11-17 05:05:05');
+$time->add(new DateInterval('PT' . $minutes_to_add . 'M'));
+
+$stamp = $time->format('Y-m-d h:i');
+
+echo $stamp;*/
 
 ?>

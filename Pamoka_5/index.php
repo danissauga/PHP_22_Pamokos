@@ -7,8 +7,6 @@ $a4 = rand(1000,9999);
 $a5 = rand(1000,9999);
 $a6 = rand(1000,9999);
 
-$ats=0;
-
 $all = array($a1,$a2,$a3,$a4,$a5,$a6);
 
 sort($all);

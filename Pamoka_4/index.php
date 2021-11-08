@@ -78,22 +78,4 @@ $n_time = $valandos.':'. $f_min .':'. $n_sec;
 echo "gautnaujas laikas: $n_time <br>";
 
 
-/*$seconds = rand(1,300);
-
-$time = strftime("%R:%S", time());
-echo "<br><br>Prminis laikas: $time";
-$new_time = date($time, time() + $seconds);
-echo "<br><br> Po pridetu sekundziu: $new_time";
-
-echo $times = date("h", time() + 30);
-
-$minutes_to_add = 5;
-
-$time = new DateTime('2011-11-17 05:05:05');
-$time->add(new DateInterval('PT' . $minutes_to_add . 'M'));
-
-$stamp = $time->format('Y-m-d h:i');
-
-echo $stamp;*/
-
 ?>

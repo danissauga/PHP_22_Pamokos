@@ -34,7 +34,8 @@ echo "Sugeneruoti skaičiai: $s1 $s2 $s3 , is kuriu yra:<br>";
 
 if ($s1 == 0) {echo '<span style="color:red;">Lygus'.$s1.'</span><br>'; }
 if ($s2 == 0) {echo '<span style="color:red;">Lygus'.$s2.'</span><br>'; }
-if ($s3 == 0) {echo '<span style="color:red;">Lygus'.$s3.'</span><br>'; }
+if ($s3 == 0) {echo '
+<span style="color:red;">Lygus'.$s3.'</span><br>'; }
 
 if ($s1 < 0) {echo '<span style="color:green;">Maziau uz 0 yra:'.$s1.'</span><br>'; }
 if ($s2 < 0) {echo '<span style="color:green;">Maziau uz 0 yra:'.$s2.'</span><br>'; }

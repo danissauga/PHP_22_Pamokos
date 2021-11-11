@@ -27,17 +27,17 @@ echo substr_count($str, 'a').'- mazuju a<br />';
 echo substr_count($str, 'A').'- didziuju A<br />';
 
 
-$string = "This is some text with some more text and even more text.";
-echo "Rastos ".preg_match_all('/[aeiou]/i',$str,$matches)." balses, sakinyje ".$str.'<br />';
+echo "Rastos ".preg_match_all('/[aeiou]/i',$str,$matches)." balses, sakinyje ".$str.'<br />Panaikinus jas gauname: ';
+echo preg_replace('/[aeiou]/i','', $str).'<br />';
 
-$string = "This is some text with some more text and even more text.";
-echo "Rastos ".preg_match_all('/[aeiou]/i',$str1,$matches)." balses, sakinyje ".$str1.'<br />';
+echo "Rastos ".preg_match_all('/[aeiou]/i',$str1,$matches)." balses, sakinyje ".$str1.'<br />Panaikinus jas gauname: ';
+echo preg_replace('/[aeiou]/i','', $str1).'<br />';
 
-$string = "This is some text with some more text and even more text.";
-echo "Rastos ".preg_match_all('/[aeiou]/i',$str2,$matches)." balses, sakinyje ".$str2.'<br />';
+echo "Rastos ".preg_match_all('/[aeiou]/i',$str2,$matches)." balses, sakinyje ".$str2.'<br />Panaikinus jas gauname: ';
+echo preg_replace('/[aeiou]/i','', $str2).'<br />';
 
-$string = "This is some text with some more text and even more text.";
-echo "Rastos ".preg_match_all('/[aeiou]/i',$str3,$matches)." balses, sakinyje ".$str3.'<br />';
+echo "Rastos ".preg_match_all('/[aeiou]/i',$str3,$matches)." balses, sakinyje ".$str3.'<br />Panaikinus jas gauname: ';
+echo preg_replace('/[aeiou]/i','', $str3).'<br />';
 
 $words = explode(" ", $str4);
 $kiek = 0;

@@ -27,6 +27,7 @@ for ($a = 0; $a < 50; $a++) {
      if (is_int($skaiciai_visi[$a]/$n)){
          $dalikliai++;
          }
+     if ($dalikliai >=3) {break;}
       }
 if ($dalikliai == 2) {
      $skaiciai_pirminiai[] = $skaiciai_visi[$a];

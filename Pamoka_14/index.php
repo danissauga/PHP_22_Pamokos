@@ -1,7 +1,7 @@
 <style type="text/css">
 .lygevimas {
   text-align: center;
-  width: 500px;
+  width: 300px;
 }
 span {
     line-height: 1;

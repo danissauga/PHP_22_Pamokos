@@ -78,7 +78,7 @@ for ($i=0; $i < count($data); $i++){
     }
 }
 
-echo 'Naudodami funkciją unset() iš masyvo ištrinkite visus elementus turinčius porinį indeksą;';
+echo '<br>Naudodami funkciją unset() iš masyvo ištrinkite visus elementus turinčius porinį indeksą;';
 foreach ($data as $index => $value){
     if ($index % 2 == 0) {
         unset($data[$index]);

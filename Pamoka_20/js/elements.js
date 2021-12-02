@@ -1,26 +1,46 @@
-function myFunction1() {
-    var para = document.createElement("P");
-    para.innerHTML = "This is a paragraph.";
-    document.getElementById("myDIV").appendChild(para);
+function validate_elements() {
+    var goods = document.getElementById('GoodsName').value;
+    var values = document.getElementById('GoodsCount').value;
+
+    if ((goods.trim() !== '') && (goods.length >= 3) && (values.trim() !== '')) {
+         if ((!isNaN(values))){
+              document.getElementById("addToCart").disabled = false;
+         } else {
+             alert('Netinkamas kiekio formatas, turi bûti tik skaèiai');
+             document.getElementById("addToCart").disabled = true;
+         }
+    } else {
+        if ((goods.length <= 3)){
+           alert('Pavadinimas ne trumpesnis nei 3 raidës!');
+           document.getElementById('GoodsName').focus();
+           document.getElementById('GoodsName').select();
+        }
+       //
+    }
 }
+
 function myFunction(name,value) {
     if (document.getElementById('no_goods')) {no_goods.remove();}
     if (!document.getElementById('goods_table'))
         { var body = document.getElementById('goods_list');
           var tbl = document.createElement('table');
               tbl.style.width = '100%';
-              tbl.setAttribute('border', '1');
+              tbl.style.display = 'table';
+              tbl.setAttribute('class', 'table');
               tbl.setAttribute('id', 'goods_table');
               body.appendChild(tbl);
         }
     if (document.getElementById('goods_table')) {
         var table = document.getElementById("goods_table");
-        var row = table.insertRow(0);
+        var row = table.insertRow(1);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
-          cell1.innerHTML = "NEW CELL1";
-          cell2.innerHTML = "NEW CELL2";
+          cell1.innerHTML = name;
+          cell2.innerHTML = value;
     }
+    document.getElementById("GoodsName").value ="";
+    document.getElementById("GoodsCount").value = "";
+    document.getElementById("addToCart").disabled = true;
 
 
     //document.getElementById("goods-list").appendChild(btn);

@@ -18,7 +18,7 @@
                 <input type="text" class="form-control" onchange="(validate_elements())" id="GoodsName" placeholder="Pavadinimas" name="GoodsName">
             </div>
             <div class="col-sm-3">
-                <input type="number" class="form-control" onchange ="(validate_elements())" placeholder="Kiekis" id="GoodsCount" name="GoodsCount">
+                <input type="number" class="form-control" oninput ="(validate_elements())" placeholder="Kiekis" id="GoodsCount" name="GoodsCount">
             </div>
         </div>
         <button type="button" id="addToCart" disabled="disabled" onclick="myFunction(GoodsName.value,GoodsCount.value)" class="btn btn-primary mt-3">Pridėti prekę</button>

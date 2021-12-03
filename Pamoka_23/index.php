@@ -18,7 +18,7 @@
                                         <div class="text-start">
                                             <pre>
                                                 <?php
-                                                        if (!isset($_GET['kuponas'])) { $_GET['kuponas'] = ""; }  //kupono nera, naudojama tik pasileidimo metu
+                                                      // if (!isset($_GET['kuponas'])) { $_GET['kuponas'] = ""; }  //kupono nera, naudojama tik pasileidimo metu
 
                                                         $kuponai = [['kuponas' => 'BLACKFIRDAY','discount' => '10'],
                                                                    ['kuponas' => 'ACHILAS','discount' => '15'],
@@ -26,8 +26,7 @@
 
                                                    // print_r($kuponai);
                                             echo '</pre>';
-                                                        if( isset($_GET['prekes']) AND is_array($_GET['prekes'])
-                                                                AND count($_GET['prekes']) > 0) :
+                                                        if( isset($_GET['prekes']) AND is_array($_GET['prekes']) AND count($_GET['prekes']) > 0) :
 
                                                         $prekes = $_GET['prekes'];
 
@@ -80,7 +79,7 @@
                                                             $discount = 0;
 
                                                             //pataisyta kuponu patikra
-                                                            
+
                                                             if ((isset($_GET['calculate_discount'])) and ($_GET['kuponas'] <> "") or ($_GET['kuponas'] <> "")) {
 
                                                                 foreach ($kuponai as $key => $value) {
@@ -105,16 +104,15 @@
                                                          if ($discount <> 0) {
                                                              echo '<div class="alert alert-success" role="alert">
                                                                     Kuponas galiojantis, jums taikoma '.$percents.'% nuplaida!
-                                                             </div>';
+                                                                    </div>';
                                                             echo '<p class="lead">Taikoma niolaida: ' . number_format($discount,2) . '</p>';
                                                             $suma = $suma - $discount;
                                                          }
                                                          //pataisym pabaiga
 
-                                                         echo '<p class="lead">Bendras uzsakytu prekiu kiekis: ' . $kiekis . '</p>'; ?>
-                                                        <?php echo '<p class="lead">Bendra uzsakytu prekiu suma po nuolaidos: ' . number_format($suma,2) . '</p>'; ?>
-
-                                                        <?php endif; ?>
+                                                         echo '<p class="lead">Bendras uzsakytu prekiu kiekis: ' . $kiekis . '</p>';
+                                                         echo '<p class="lead">Bendra uzsakytu prekiu suma po nuolaidos: ' . number_format($suma,2) . '</p>';
+                                                         endif; ?>
 
                                         </div>
                                 </div>
@@ -124,7 +122,8 @@
                                         <form method="GET" action="">
                                                 <div class="row mb-3">
                                                     <div class="col-md-2" >
-                                                        <input id="kuponas" name="kuponas"  class="form-control" type="text" value="<?php echo $_GET['kuponas']; ?>" placeholder="Nuolaidos kuponas">
+                                                     <!--   <?php echo $_GET['kuponas']; ?>   -->
+                                                        <input id="kuponas" name="kuponas" class="form-control" type="text" value="" placeholder="Nuolaidos kuponas">
                                                     </div>
                                                     <div class="col-md-2" >
                                                         <button type="submit" name="calculate_discount" class="btn btn-success">Pritaikyti nuolaidą</button>
@@ -171,9 +170,10 @@
                                                 <div class="mt-5 mb-5">
                                                         <button class="w-100 btn btn-primary btn-lg" type="submit">Siųsti duomenis</button>
                                                 </div>
-                                        </form>
+                                     </form>
                                 </div>
-                                </div>
+                            </div>
+
                         </main>
                 </div>
 

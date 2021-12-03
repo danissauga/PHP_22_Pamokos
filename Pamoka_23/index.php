@@ -18,8 +18,8 @@
                                         <div class="text-start">
                                             <pre>
                                                 <?php
-                                                     if (!isset($_GET['kuponas'])) { $kupon = ""; }
-                                                     else { $kupon = $_GET['kuponas']; }  //kupono nera, naudojama tik pasileidimo metu
+                                                     if (!isset($_GET['kuponas'])) { $kupon = ""; }     //kuponas yra ar jo nera
+                                                     else { $kupon = $_GET['kuponas']; }
 
                                                         $kuponai = [['kuponas' => 'BLACKFIRDAY','discount' => '10'],
                                                                    ['kuponas' => 'ACHILAS','discount' => '15'],

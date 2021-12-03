@@ -1,5 +1,5 @@
 <?php
-$symbols = [];
+$symbols = '';
 $data_array = [];
 echo '<pre>';
 for ($i=0; $i< 10; $i++) {

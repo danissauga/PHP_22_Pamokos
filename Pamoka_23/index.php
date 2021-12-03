@@ -18,13 +18,12 @@
                                         <div class="text-start">
                                             <pre>
                                                 <?php
-                                                      // if (!isset($_GET['kuponas'])) { $_GET['kuponas'] = ""; }  //kupono nera, naudojama tik pasileidimo metu
+                                                     if (!isset($_GET['kuponas'])) { $kupon = ""; }
+                                                     else { $kupon = $_GET['kuponas']; }  //kupono nera, naudojama tik pasileidimo metu
 
                                                         $kuponai = [['kuponas' => 'BLACKFIRDAY','discount' => '10'],
                                                                    ['kuponas' => 'ACHILAS','discount' => '15'],
                                                                    ['kuponas' => 'META','discount' => '5']];
-
-                                                   // print_r($kuponai);
                                             echo '</pre>';
                                                         if( isset($_GET['prekes']) AND is_array($_GET['prekes']) AND count($_GET['prekes']) > 0) :
 
@@ -122,8 +121,7 @@
                                         <form method="GET" action="">
                                                 <div class="row mb-3">
                                                     <div class="col-md-2" >
-                                                     <!--   <?php echo $_GET['kuponas']; ?>   -->
-                                                        <input id="kuponas" name="kuponas" class="form-control" type="text" value="" placeholder="Nuolaidos kuponas">
+                                                        <input id="kuponas" name="kuponas" class="form-control" type="text" value="<?php echo $kupon; ?>" placeholder="Nuolaidos kuponas">
                                                     </div>
                                                     <div class="col-md-2" >
                                                         <button type="submit" name="calculate_discount" class="btn btn-success">Pritaikyti nuolaidą</button>

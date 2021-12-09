@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 echo '<pre>';
 function dalikliai(int $skaicius)
 {
@@ -80,34 +80,18 @@ echo '<br>';
 
 function fact($n,$f) {
   if ($n === 0) { //ar ne 0 lis
-     return 1;
+     return 0; //Jei taip - grazinamas paskutinis simbolis 0 = lis 
   }
   else {
       for ($i = 0; $i < $f; $i++){
          if ($i == $f-1) { $mass[$i]=fact($n-1, rand(10,20)); } else {
-              $mass[$i]=rand(0,10); }
+          $mass[$i]=rand(0,10); }
       }
       }
       return $mass;
 
 }
 print_r(fact(rand(10,30), rand(10,20)));
-
-
-/* for ($i = 0; $i < $till; $i++) {
-        if ($i == $till-1) {
-            $till2 = rand(10,20);
-            for ($x = 0; $x < $till2; $x++) {
-                $masyvas[$i][$x] = rand(0,10);
-           }
-        }
-        else {
-           $masyvas[$i] = rand(0,10);
-        }
-
-    }*/
-
-
 
 
 ?>

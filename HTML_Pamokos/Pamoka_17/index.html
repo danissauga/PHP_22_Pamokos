@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Hello!</title>
+</head>
+
+<body>
+Ivesdamas textas :<input type="text" oninput="set_text()" id="myText" value="Textas"/><br>
+Ivedamas fonto dydis: <input type="number" oninput="set_size()" id="mySize" value="16" /><br><br>
+Ivedamas dezutes plotis: <input type="number" oninput="set_width()" id="myWidth" value="200" /><br><br>
+Ivedamas dezutes aukstis: <input type="number" oninput="set_height()" id="myHeight" value="200" /><br><br>
+Horizontalus lygiavimas: <input oninput="set_align(this.value)" id="horizontal_align" name="horizontal_align" type="radio" value="left">Kaireje
+
+<input id="horizontal_align" oninput="set_align(this.value)" name="horizontal_align" type="radio" value="center">Centre
+
+<input id="horizontal_align" oninput="set_align(this.value)" name="horizontal_align" type="radio" value="right">Desineje<br><br>
+Vertikalus lygiavimas: <input oninput="set_align_vertical(this.value)" id="vertical_align" name="vertical_align" type="radio" value="top">Vursyje
+<input id="vertical_align" oninput="set_align_vertical(this.value)" name="vertical_align" type="radio" value="middle">Centre
+<input id="vertical_align" oninput="set_align_vertical(this.value)" name="vertical_align" type="radio" value="right">Apacioje<br><br>
+
+
+
+<div id="myBox" style="width: 200px; height: 200px; background-color: #66FFCC;">
+   <p id='myDivText'>Textas</p>
+</div>
+<script>
+function set_text() {
+    let myText = document.getElementById("myText");
+    let myBox = document.getElementById("myDivText");
+
+    myBox.innerHTML = myText.value;
+}
+function set_size() {
+
+let Size = document.getElementById("mySize").value;
+document.getElementById("myDivText").style.fontSize = Size + "px";
+}
+function set_width() {
+let Width = document.getElementById("myWidth").value;
+console.log(Width)
+document.getElementById("myBox").style.width = Width + "px";
+}
+function set_height() {
+let Height = document.getElementById("myHeight").value;
+console.log(Height)
+document.getElementById("myBox").style.height = Height + "px";
+}
+function set_align(val) {
+document.getElementById("myBox").style.textAlign = val;
+console.log(name);
+}
+function set_align_vertical(val) {
+console.log(val)
+document.getElementById("myDivText").style.verticalAlign = val;
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+.portfolio-block {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.portfolio-block .heading {
+margin-bottom: 0px;
+padding-bottom: 10px;
+}
+.portfolio-block form {
+    padding: 30px;
+}
+.alert {
+    padding: 5px;
+}

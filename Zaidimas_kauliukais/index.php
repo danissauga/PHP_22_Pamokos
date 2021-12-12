@@ -8,27 +8,27 @@ require("includes/header.php");
                     <h2>žaidimas kauliukais</h2>
                 </div>
                 <form>
-                    <h1 style="text-align: center;">Rezultatas</h1>
+                    <h3 style="text-align: center;">Rezultatas</h3>
                     <hr style="width: 100%; height: 2px; background-color: #DDDDDD">
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-md-6">
-                                <h1 id="user_1_name" style="text-align: center;">Žaidėjas Nr.: 1</h1>
+                                <h3 id="user_1_name" style="text-align: center;">Žaidėjas Nr.: 1</h3>
                             </div>
                             <div class="col-md-6">
-                                <h1 id="user_2_name" style="text-align: center;">Žaidėjas Nr.: 2</h1>
+                                <h3 id="user_2_name" style="text-align: center;">Žaidėjas Nr.: 2</h3>
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
-                            <input id="user_1_score" hidden="hidden" value="0" name="user_1_score">
-                            <span class="text-center d-flex align-content-center my-auto justify-content-xl-center align-items-xl-center" style="font-size: 75px;">00</span>
+                        <div class="col-md-6 ">
+                            <input id="user_1_score" type="number" hidden="hidden" value="0" name="user_1_score">
+                            <span id="display_1_score" class="game_result text-center d-flex align-content-center my-auto justify-content-xl-center align-items-xl-center" style="font-size: 65px;">00</span>
                         </div>
-                        <div class="col-md-6">
-                            <input id="user_2_score" hidden="hidden" value="0" name="user_2_score">
-                            <span class="text-center d-flex align-content-center my-auto justify-content-xl-center align-items-xl-center" style="font-size: 75px;">00</span>
+                        <div class="col-md-6 ">
+                            <input id="user_2_score" type="number" hidden="hidden" value="0" name="user_2_score">
+                            <span id="display_2_score" class="game_result text-center d-flex align-content-center my-auto justify-content-xl-center align-items-xl-center" style="font-size: 65px;">00</span>
                         </div>
                     </div>
                     <div class="row">
@@ -57,8 +57,8 @@ require("includes/header.php");
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col" id="ball_box" style="text-align: center; padding-top:10px;">
-                            <picture id="start_pic"><img style="text-align: center;" src="assets/img/losimo-kauliukas.jpg"></picture>
+                        <div class="col" id="ball_box" style="text-align: center; padding-top:2px;">
+                            <picture><img id="start_pic" class="img-fluid" style="text-align: center; max-height: 200px;" src="./img/start_page.png"></picture>
                         </div>
                     </div>
                     <div class="row mt-3" id="mesti_kauliuka" style="display:none;">

@@ -37,20 +37,29 @@ function get_ball(){
 function pull_the_ball(who_pull) {
     var ball = get_ball();
 
-    if (document.getElementById("start_pic")) {
-       var myobj = document.getElementById("start_pic");
-            myobj.remove(); }
-       if (!document.getElementById("boll_value")) {
-       var get_box = document.getElementById("ball_box");
-       var theSpan = document.createElement("SPAN");
-       var textas = document.createTextNode(ball);
-        theSpan.setAttribute("id", "boll_value");
-        theSpan.appendChild(textas);
-           get_box.appendChild(theSpan);
-      } else {
+   if (document.getElementById("start_pic")) {
+       document.getElementById("start_pic").src = './img/' + ball + '.jpg';
+    }
+           /*if (!document.getElementById("boll_value")) {
+               var get_box = document.getElementById("ball_box");
+               var theSpan = document.createElement("SPAN");
+               var textas = document.createTextNode(ball);
+                   theSpan.setAttribute("id", "boll_value");
+                   theSpan.appendChild(textas);
+                   get_box.appendChild(theSpan);
+          } else {
         document.getElementById("boll_value").innerHTML = ball;
-      }
-    //    alert(ball);
-    if (who_pull == 1) { var next_pull = 2; } else { var next_pull = 1;}
-    document.getElementById('kas_meta').value = next_pull;
+      }*/
+    let score = 0;
+    let curent_score = parseInt(document.getElementById('user_'+ who_pull + '_score').value);
+        score = curent_score + ball;
+        document.getElementById('user_'+ who_pull + '_score').value = score;
+        document.getElementById('display_'+ who_pull + '_score').innerHTML = score;
+    if (score >= 30) {
+            alert('Zaidime laimejo surinkes (-us) ' + score + ' tasku - ' + document.getElementById('user_' + who_pull).value);
+    }
+        else {
+            if (who_pull == 1) { var next_pull = 2; } else { var next_pull = 1;}
+            document.getElementById('kas_meta').value = next_pull;
+            }
 }

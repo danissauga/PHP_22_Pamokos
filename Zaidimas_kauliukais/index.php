@@ -11,24 +11,25 @@ require("includes/header.php");
                     <h3 style="text-align: center;">Rezultatas</h3>
                     <hr style="width: 100%; height: 2px; background-color: #DDDDDD">
                     <div class="mb-3">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h3 id="user_1_name" style="text-align: center;">Žaidėjas Nr.: 1</h3>
+                        <div class="row" style="text-align: center;">
+                            <div class="col-6">
+                                <p style="text-align: center"><h3 id="user_1_name">Žaidėjas Nr.: 1</h3> </p>
                             </div>
-                            <div class="col-md-6">
-                                <h3 id="user_2_name" style="text-align: center;">Žaidėjas Nr.: 2</h3>
+                            <div class="col-6">
+                                <p style="text-align: center"><h3 id="user_2_name">Žaidėjas Nr.: 2</h3> </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6 ">
-                            <input id="user_1_score" type="number" hidden="hidden" value="0" name="user_1_score">
-                            <span id="display_1_score" class="game_result text-center d-flex align-content-center my-auto justify-content-xl-center align-items-xl-center" style="font-size: 65px;">00</span>
+                             <input id="user_1_score" type="number" hidden="hidden" value="0" name="user_1_score">
+                             <input id="user_2_score" type="number" hidden="hidden" value="0" name="user_2_score">
+
+                    <div class="row justify-content-md-center">
+                        <div class="col-6 text-center">
+                            <span class="col-auto" id="display_1_score" class="game_result" style="font-size: 65px;">00</span>
                         </div>
-                        <div class="col-md-6 ">
-                            <input id="user_2_score" type="number" hidden="hidden" value="0" name="user_2_score">
-                            <span id="display_2_score" class="game_result text-center d-flex align-content-center my-auto justify-content-xl-center align-items-xl-center" style="font-size: 65px;">00</span>
+                        <div class="col-6 text-center">
+                            <span id="display_2_score" class="game_result" style="font-size: 65px;">00</span>
                         </div>
                     </div>
                     <div class="row">
@@ -36,11 +37,11 @@ require("includes/header.php");
                              Įveskite žaidėjų vardus!
                         </div>
                     </div>
-                    <div class="row mt-3">
-                        <div class="col">
+                    <div class="row mt-3 justify-content-md-center">
+                        <div class="col-6">
                             <input class="form-control" type="text" id="user_1" name="user_1" placeholder="Pirmo žaidėjo vardas" minlength="3" required="">
                         </div>
-                        <div class="col">
+                        <div class="col-6">
                             <input class="form-control" type="text" id="user_2" name="user_2" placeholder="Antro žaidėjo vardas" minlength="3" required="">
                         </div>
                     </div>
@@ -52,8 +53,8 @@ require("includes/header.php");
 
                     <div class="row" id="end_game_information" style="display:none; padding:0;">
                         <hr style="width: 100%; height: 2px; background-color: #DDDDDD">
-                       <div class="alert alert-success" role="alert">
-                             Žaidimas baigiamas, kaip vienas iš žaidėjų surenka 30 taškų!
+                       <div id="info_bar" class="alert alert-success" role="alert">
+                             Žaidimas baigiamas, kaip vienas iš žaidėjų surenka 30 ir daugiau taškų!
                         </div>
                     </div>
                     <div class="row">
@@ -65,6 +66,7 @@ require("includes/header.php");
                         <div class="col d-block d-xl-flex my-auto justify-content-xl-center align-items-xl-center">
                             <input id="kas_meta" hidden="hidden" name="kas_meta" type="text">
                             <button id="push_ball" onclick="pull_the_ball(kas_meta.value)" class="btn btn-primary border rounded-0 form-control" type="button">Risti kamuoliuką</button>
+                            <button id="restart" style="display: none;" onclick="location.reload();" class="btn btn-danger border rounded-0 form-control" type="button">Pakartoti žaidimą</button>
                         </div>
                     </div>
                     <div></div>

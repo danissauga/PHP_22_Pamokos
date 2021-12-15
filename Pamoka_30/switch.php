@@ -8,7 +8,7 @@ function show_message($id) {
      }
 
 }
-if ((isset($_POST['go'])) and (isset($_POST['value']))) {
+if (isset($_POST['value'])) {
     $case_id = $_POST['value'];
     switch($case_id){
         case 1:
@@ -36,7 +36,6 @@ if ((isset($_POST['go'])) and (isset($_POST['value']))) {
 ?>
 
 <form name="add_to_swich" method="POST">
-
 <select id="value" name="value" size="1">
 <option value="" selected="selected">Pasirinkite</option>
 <option value="1">Vinas</option>

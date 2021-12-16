@@ -47,6 +47,6 @@
             </div>
     </section>
 </main>
-<!--<?php
+<?php
 include("includes/footer.php");
-?>-->
+?>

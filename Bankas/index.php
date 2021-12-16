@@ -34,6 +34,5 @@ if (!is_logged_in($users)) :
 <?php else :
 include("pages/bankas.php"); //Aciu inga :)
 endif;
-include("includes/footer.php");
 ?>
 

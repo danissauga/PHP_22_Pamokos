@@ -1,13 +1,12 @@
 <?php
 
-define("ACCOUNTS","./db/accounts.json");
-
 function get_data() {
-   // unset($_SESSION['accounts']);
+   unset($_SESSION['accounts']);
+  //  count($_SESSION['accounts']);
    if (file_exists(ACCOUNTS)) {
         $_SESSION['accounts'] = json_decode(file_get_contents(ACCOUNTS), true);
         if (!$_SESSION['accounts']) {
-            $_SESSION['accounts'] = 'aaaaaa';
+            $_SESSION['accounts'] = [];
         }
    }
 

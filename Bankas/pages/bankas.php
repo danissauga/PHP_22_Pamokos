@@ -1,9 +1,12 @@
-<?php include("includes/meniu.php"); ?>
+<?php include("includes/meniu.php");
+   include("includes/functions.php");
+   get_data();
+?>
 <main class="page">
     <section class="portfolio-block project">
         <div class="container">
-<!--<main class="page lanidng-page"></main>-->
-            <div>
+
+
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -11,7 +14,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
             <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -22,7 +25,7 @@
                                             <th class="text-center">#</th>
                                             <th class="text-center">Vardas, Pavardė</th>
                                             <th class="text-center">Sąskaitos nr.</th>
-                                            <th class="text-center">Turimos lėšos EUR</th>
+                                            <th class="text-center">Turimos lėšos</th>
                                             <th class="text-center filter-false sorter-false">&nbsp;</th>
                                         </tr>
                                     </thead>
@@ -33,9 +36,9 @@
                                             <td>LT10000000000000000000</td>
                                             <td>1000.00</td>
                                             <td class="text-center">
-                                                <a class="btn btn-success" role="button" style="margin: 2px;" data-toggle="modal" data-target="#myModal-add-payment"><i class="fas fa-arrow-down"></i></a>
-                                                <a class="btn btn-primary" role="button" style="margin: 2px;" data-toggle="modal" data-target="#myModal-make-payment"><i class="fas fa-arrow-up"></i></a>
-                                                <a class="btn btn-danger" role="button" style="margin: 2px;"  data-toggle="modal" data-target="#myModal-delete-account"><i class="fas fa-trash"></i>
+                                                <a class="btn btn-success" id="get-payment" role="button" style="margin: 2px;" data-toggle="modal" data-id="1"><i class="fas fa-arrow-down"></i></a>
+                                                <a class="btn btn-primary" id="make-payment" role="button" style="margin: 2px;" data-toggle="modal" data-id="1"><i class="fas fa-arrow-up"></i></a>
+                                                <a class="btn btn-danger" id="delete-account" role="button" style="margin: 2px;"  data-toggle="modal" data-id="1"><i class="fas fa-trash"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -49,5 +52,25 @@
     </section>
 </main>
 <?php
+print_r($_SESSION);
 include("includes/footer.php");
 ?>
+<script>
+$("#get-payment").click(function () {
+    var ids = $(this).attr('data-id');
+    $("#add-payment-id").val( ids );
+    $('#myModal-add-payment').modal('show');
+});
+$("#make-payment").click(function () {
+    var ids = $(this).attr('data-id');
+    $("#make-payment-id").val( ids );
+    $('#myModal-make-payment').modal('show');
+});
+$("#delete-account").click(function () {
+    var ids = $(this).attr('data-id');
+    $("#delete-account-id").val( ids );
+    $('#myModal-delete-account').modal('show');
+});
+</script>
+<!--//data-target="#myModal-add-payment"
+-->

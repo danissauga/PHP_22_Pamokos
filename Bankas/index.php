@@ -32,7 +32,8 @@ if (!is_logged_in($users)) :
 
 
 <?php else :
-include("pages/bankas.php"); //Aciu inga :)
+include("pages/bankas.php");
+include("includes/modals.php");
 endif;
 ?>
 

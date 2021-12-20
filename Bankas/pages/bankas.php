@@ -77,16 +77,19 @@ function get_payment_modal(mod_id) {
     $('#myModal-add-payment').modal('show');
 
 var PaymentFormData = $("#add_payment_form").serializeArray();
-var resp = new Array(new Array());
+console.log(PaymentFormData);
+//var resp = new Array(new Array());
     $.ajax({
     type: "POST",
     dataType: 'json',
     url: "includes/classes/add_payment.php",
     data: "acc_id=" + mod_id + "&f=0"
         }).done(function( resp ) {
-           // alert(resp);
+            alert(resp);
         for (let i = 0; i < PaymentFormData.length; i++) {
-            if (resp[PaymentFormData[i]['name']]) {
+            var prefix = PaymentFormData[i]['name'];
+              
+            if (resp[prefix]) {
                 document.forms['add_payment_form'].elements[PaymentFormData[i]['name']].value = resp[PaymentFormData[i]['name']];
             }
         }

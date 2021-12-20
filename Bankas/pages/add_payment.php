@@ -4,14 +4,14 @@
             <div class="modal-header">
                 <h6 class="modal-title" id="myModalLabel">Lėšų užskaitymas</h6>
             </div>
-            <form method="POST" name="add_payment_form">
+            <form method="POST" name="add_payment_form" id="add_payment_form">
             <div class="modal-body">
 
                         <input type="number" name="add-payment-id" id="add-payment-id" value="">
 
                         <div class="form-group">
                             <label for="name">Vardas</label>
-                            <input type="text" readonly="readonly" class="form-control" id="name" name="name">
+                            <input type="text" readonly="readonly" class="form-control" id="add_name" name="add_name">
                         </div>
                         <div class="form-group">
                             <label for="account_nr">Sąskaitos numeris </label>

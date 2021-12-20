@@ -24,7 +24,7 @@
                         </div>
                         <div class="form-group">
                             <label for="personal_code">Asmens kodas</label>
-                            <input type="number" class="form-control" id="personal_code" maxlength="11" name="personal_code" placeholder="Įveskite asmens kodas">
+                            <input type="text" class="form-control" id="personal_code" onkeypress="return validateNumber(event)" maxlength=11 name="personal_code" placeholder="Įveskite asmens kodas">
                         </div>
                 </div>
                 <div class="modal-footer">
@@ -39,11 +39,14 @@
 
 <script>
 
+function validateNumber(e) {
+            const pattern = /^[0-9]$/;
+            return pattern.test(e.key )
+}
+
 
 function set_data(class_id) {
-
-   var AccountFormData = $("#add_account_form").serializeArray();
-    console.log(AccountFormData);
+var AccountFormData = $("#add_account_form").serializeArray();
 if (class_id == 0) {
     $.ajax({
     type: "POST",

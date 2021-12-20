@@ -4,7 +4,7 @@
             <div class="modal-header">
                 <h6 class="modal-title" id="myModalLabel">Lėšų užskaitymas</h6>
             </div>
-            <form method="POST">
+            <form method="POST" name="add_payment_form">
             <div class="modal-body">
 
                         <input type="number" name="add-payment-id" id="add-payment-id" value="">

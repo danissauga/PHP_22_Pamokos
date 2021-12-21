@@ -23,4 +23,4 @@ class test {
 $imone1 = new test('Adomas', 'Mickevicius', 4);
 echo $imone1->skaicuok(). '</br>';
 $imone2 = new test('Kazys', 'Grinius', 2);
-echo $imone2->skaicuok();
+print_r ($imone2->skaicuok());

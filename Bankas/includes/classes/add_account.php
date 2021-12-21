@@ -2,7 +2,7 @@
 session_start();
 class Foo { 
 
-function add_account($f) {
+public function add_account($f) {
 if (isset($_SESSION['accounts']))
 {
   $kiek = count($_SESSION['accounts']);
@@ -31,7 +31,7 @@ if (isset($_SESSION['accounts']))
 $_SESSION['reload'] = 'true';
 }
 
-function get_account_data()
+public function get_account_data()
 {
     $account_data = $_SESSION['accounts'][$_POST['acc_id']];
     echo json_encode($account_data);

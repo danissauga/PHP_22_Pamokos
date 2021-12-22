@@ -14,7 +14,7 @@ public function __construct($a1,$a2,$a3) {
 
 public function employee_test() {
      if ($this ->employee_count > 3) {
-        $this->company_info =  $this->company.', '.$this->address.', Kuri turi '.$this->employee_count. ' darbuotojus.';
+        $this->company_info =  $this->company.', '.$this->address.', Kuri turi '.$this->employee_count. ' darbuotojus.<br />';
      }
     return $this->company_info;
 }
@@ -41,6 +41,6 @@ $companys= get_data();
 
 foreach ($companys as $id => $value) {
     $data = new company($value['company'],$value['address'],$value['employee_count']);
-    echo $data->employee_test(). '<br>';
+    echo $data->employee_test();
 
 }

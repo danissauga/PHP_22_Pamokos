@@ -15,7 +15,7 @@ public function minr(){
     if ($this->min > 5){
         return $this->true_min = true;
     } else {
-        return $this->true_min - false; //prideta reiksme
+        return $this->true_min = false; //prideta reiksme
         }
 }
 public function maxr(){

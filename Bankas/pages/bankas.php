@@ -22,6 +22,7 @@ if((!isset($_SESSION['reload'])) or ($_SESSION['reload'] == 'true')) { get_data(
                                         <tr>
                                             <th class="text-center">#</th>
                                             <th class="text-center">Vardas, Pavardė</th>
+                                            <th class="text-center">Asmens kodas</th>
                                             <th class="text-center">Sąskaitos nr.</th>
                                             <th class="text-center">Turimos lėšos</th>
                                             <th class="text-center filter-false sorter-false">&nbsp;</th>
@@ -34,18 +35,21 @@ if((!isset($_SESSION['reload'])) or ($_SESSION['reload'] == 'true')) { get_data(
                                         if(isset($_SESSION['accounts'])) :
                                             if (count($_SESSION['accounts']) !== 0) :
                                                 foreach($_SESSION['accounts'] as $id => $value):
-                                                    print_r($value);
+                                                   // print_r($value);
                                             ?>
                                                 <tr>
                                                     <td><?php echo $id+1; ?></td>
                                                     <td><?php echo $value['name'] . ', ' . $value['lname']; ?></td>
-                                                    <td>LT10000000000000000000</td>
-                                                    <td>1000.00</td>
+                                                    <td><?php echo $value['personal_code']; ?></td>
+                                                    <td><?php echo $value['account_nr']; ?></td>
+                                                    <td><?php echo $value['resources']; ?></td>
                                                     <td class="text-center">
-                                                        <a class="btn btn-success" id="get-payment" role="button" style="margin: 2px;" data-toggle="modal" data-id="1"><i class="fas fa-arrow-down"></i></a>
-                                                        <a class="btn btn-primary" id="make-payment" role="button" style="margin: 2px;" data-toggle="modal" data-id="1"><i class="fas fa-arrow-up"></i></a>
-                                                        <a class="btn btn-danger" id="delete-account" role="button" style="margin: 2px;"  data-toggle="modal" data-id="1"><i class="fas fa-trash"></i>
-                                                        </a>
+                                                        <a class="btn btn-success" onclick="edit_account_modal(<?php echo $id; ?>)" id="add-account" role="button" style="margin: 2px;" data-toggle="modal"><i class="far fa-edit"></i></a>
+                                                        <a class="btn btn-success" onclick="get_payment_modal(<?php echo $id; ?>)" id="get-payment" role="button" style="margin: 2px;" data-toggle="modal"><i class="fas fa-arrow-down"></i></a>
+                                                        <a class="btn btn-primary" onclick="make_payment_modal(<?php echo $id; ?>)" id="make-payment" role="button" style="margin: 2px;" data-toggle="modal" data-id="<?php echo $id; ?>"><i class="fas fa-arrow-up"></i></a>
+                                                    <?php if ($value['resources'] == 0) : ?>
+                                                        <a class="btn btn-danger" onclick="delete_account_modal(<?php echo $id; ?>)"id="delete-account" role="button" style="margin: 2px;"  data-toggle="modal" data-id="<?php echo $id; ?>"><i class="fas fa-trash"></i></a>
+                                                    <?php endif; ?>
                                                     </td>
                                                 </tr>
                                             <?php
@@ -67,21 +71,78 @@ if((!isset($_SESSION['reload'])) or ($_SESSION['reload'] == 'true')) { get_data(
 include("includes/footer.php");
 ?>
 <script>
-$("#get-payment").click(function () {
-    var ids = $(this).attr('data-id');
-    $("#add-payment-id").val( ids );
+
+function get_payment_modal(mod_id) {
+    $("#add-payment-id").val( mod_id );
     $('#myModal-add-payment').modal('show');
-});
-$("#make-payment").click(function () {
-    var ids = $(this).attr('data-id');
-    $("#make-payment-id").val( ids );
+var PaymentFormData = $("#add_payment_form").serializeArray();
+    $.ajax({
+    type: "POST",
+    dataType: 'json',
+    url: "includes/classes/add_payment.php",
+    data: "acc_id=" + mod_id + "&f=1"
+        }).done(function( resp ) {
+            console.log(resp);
+        for (let i = 0; i < PaymentFormData.length; i++) {
+            var prefix = PaymentFormData[i]['name'];
+
+            if (resp[prefix]) {
+                document.forms['add_payment_form'].elements[PaymentFormData[i]['name']].value = resp[PaymentFormData[i]['name']];
+            }
+        }
+    })
+
+
+}
+function make_payment_modal(mod_id) {
+    $("#make-payment-id").val( mod_id );
     $('#myModal-make-payment').modal('show');
-});
-$("#delete-account").click(function () {
-    var ids = $(this).attr('data-id');
-    $("#delete-account-id").val( ids );
+
+var MakePaymentFormData = $("#make_payment_form").serializeArray();
+console.log(MakePaymentFormData);
+console.log(mod_id);
+
+ $.ajax({
+    type: "POST",
+    dataType: 'json',
+    url: "includes/classes/add_payment.php",
+    data: "acc_id=" + mod_id + "&f=1"
+        }).done(function( resp ) {
+            console.log(resp);
+        for (let i = 0; i < MakePaymentFormData.length; i++) {
+            var prefix = MakePaymentFormData[i]['name'];
+
+            if (resp[prefix]) {
+                document.forms['make_payment_form'].elements[MakePaymentFormData[i]['name']].value = resp[MakePaymentFormData[i]['name']];
+            }
+        }
+    })
+
+
+}
+function delete_account_modal(mod_id) {
+    $("#delete-account-id").val( mod_id );
     $('#myModal-delete-account').modal('show');
-});
+}
+function edit_account_modal(mod_id) {
+    $("#add-account-id").val( mod_id );
+    document.getElementById("add_new_account_data").style.display = "none";
+    document.getElementById("update_account_data").style.display = "inline";
+    $('#myModal-add-account').modal('show');
+var formData = $("#add_account_form").serializeArray();
+var resp = new Array(new Array());
+    $.ajax({
+    type: "POST",
+    dataType: 'json',
+    url: "includes/classes/add_account.php",
+    data: "acc_id=" + mod_id + "&f=1"
+        }).done(function( resp ) {
+        for (let i = 0; i < formData.length; i++) {
+            if (resp[formData[i]['name']]) {
+                document.forms['add_account_form'].elements[formData[i]['name']].value = resp[formData[i]['name']];
+            }
+        }
+    })
+}
+
 </script>
-<!--//data-target="#myModal-add-payment"
--->

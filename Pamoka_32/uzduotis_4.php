@@ -34,6 +34,8 @@ public $true_max = false;
            }
         }
 }
+
+
 $minr=rand(0,56);
 $maxr=rand(5,156);
 $test = new numbers($minr,$maxr);

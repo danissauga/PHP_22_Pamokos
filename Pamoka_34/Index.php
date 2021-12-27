@@ -1,31 +1,27 @@
 <?php
 
-class Index {
+spl_autoload_register(function () {
 
-    public function __construct() {
+    if ($handle = opendir('./classes/')) {
 
+    while (false !== ($entry = readdir($handle))) {
+
+        if ($entry != "." && $entry != "..") {
+            include './classes/'.$entry;
+        }
     }
 
-    public function atspausdinimas() { //override
-
-        echo 'Ant kaledines eglutes';
-
-    }
-
+    closedir($handle);
 }
 
-class Extern extends Index {
+});
 
-    public function atspausdinimas() { //override
+$helper = new Helpers();
 
-        echo 'Ant PHP Eglutes';
-
-    }
-
-}
+echo $helper::ADDRESS.'<br />';
 
 $index = new Index();
-$extern = new Extern();
+//$extern = new Extern();
 
-$extern->atspausdinimas();
-//$index
+//$extern->atspausdinimas();
+$index->atspausdinimas();

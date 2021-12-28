@@ -7,10 +7,10 @@ spl_autoload_register(function () {
     while (false !== ($entry = readdir($handle))) {
 
         if ($entry != "." && $entry != "..") {
-            $test = explode(".", $entry);
-            $ilgis = count($test);
-        if ($test[$ilgis-1] == 'php') {
-            include './classes/'.$entry;
+            $test = explode(".", $entry);    //susiskaidome faila i dalis
+            $ilgis = count($test);    //paiimame suskaidytu daliu skaiciu
+        if ($test[$ilgis-1] == 'php') { //jei ikelto failo galune php
+            include './classes/'.$entry; //tada ji uzregistruojame.
             }
         }
     }

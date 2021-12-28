@@ -22,10 +22,10 @@ spl_autoload_register(function () {
 
 $helper = new Helpers();
 
-//echo $helper::ADDRESS.'<br />';
+echo $helper::ADDRESS.'<br />';
 
-$index = new Index();
-//$extern = new Extern();
+//$index = new Index();
+$extern = new Extern();
 
-//$extern->atspausdinimas();
+$extern->atspausdinimas();
 //$index->atspausdinimas();

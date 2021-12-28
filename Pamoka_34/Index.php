@@ -1,5 +1,5 @@
 <?php
-
+echo '<pre>';
 spl_autoload_register(function () {
 
     if ($handle = opendir('./classes/')) {
@@ -7,7 +7,11 @@ spl_autoload_register(function () {
     while (false !== ($entry = readdir($handle))) {
 
         if ($entry != "." && $entry != "..") {
+            $test = explode(".", $entry);
+            $ilgis = count($test);
+        if ($test[$ilgis-1] == 'php') {
             include './classes/'.$entry;
+            }
         }
     }
 
@@ -18,10 +22,10 @@ spl_autoload_register(function () {
 
 $helper = new Helpers();
 
-echo $helper::ADDRESS.'<br />';
+//echo $helper::ADDRESS.'<br />';
 
 $index = new Index();
 //$extern = new Extern();
 
 //$extern->atspausdinimas();
-$index->atspausdinimas();
+//$index->atspausdinimas();

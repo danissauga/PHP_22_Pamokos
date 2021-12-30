@@ -14,7 +14,7 @@ for ($i=0; $i<30; $i++ ) {
 foreach ($mass as $key => $value) {
 
   if ($value > 10) {
-      echo 'Pirmasis maziausias indeksas kurio value > 10 yra: '. $key. '<br />';
+    //  echo 'Pirmasis maziausias indeksas kurio value > 10 yra: '. $key. '<br />';
       break;
   }
 
@@ -29,14 +29,32 @@ for ($i=0; $i<$count; $i++) {
         $mass->$i = 0;
     }
 }
-print_r($mass);
+//print_r($mass);
 
 //4 ta uzduotis
 
+foreach ($mass as $key => $value) {
+
+if ($value > 10) {
+//echo 'Pirmasis maziausias indeksas kurio value > 10 yra: '. $key. '<br />';
+break;
+}
+
+}
+//5 uzduotis
+
+foreach ($mass as $key => $value) {
+
+ if (!fmod($key,2))  {
+        unset($mass->$key);
+}
+}
+echo 'Penktoji uzduotis:<br />';
+print_r($mass);
 
 
 // 2 uduotis
 for ($i=$count-1; $i<$count+10; $i++) {
     $mass->$i = rand(5,25);
 }
-print_r($mass);
+//print_r($mass);

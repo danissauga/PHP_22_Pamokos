@@ -1,10 +1,10 @@
 <?php
 
-spl_autoload_register(function() {
-    require __DIR__ . '/Crud/NameStore.php';
-    require __DIR__ . '/Crud/NameModel.php';
-    require __DIR__ . '/Crud/ExampleClass.php';
-});
+//spl_autoload_register(function() {
+ //   require __DIR__ . '/Crud/NameStore.php';
+ //   require __DIR__ . '/Crud/NameModel.php';
+ //   require __DIR__ . '/Crud/ExampleClass.php';
+//});
 
 include (__DIR__ . '/vendor/autoload.php');
 

@@ -1,0 +1,15 @@
+{   
+    "name": "Sigita/Pamoka38",
+    "description": "Testine aplikacija",
+    "type": "Project",
+    "require": {
+        "simplon/mysql": "^2.2"
+    },
+    "autoload": {
+        "files": [
+            "classes/Crud/NameStore.php",
+            "classes/Crud/NameModel.php",
+            "classes/Crud/ExampleClass.php"
+        ]
+    }
+}

@@ -70,7 +70,7 @@ $from_input = [
     'name' => 'John',
 ];
 
-$duom->DeleteCustomRecord($dbConn, $from_input);
+//$duom->DeleteCustomRecord($dbConn, $from_input);
 
 
 //Duomenu paemimas

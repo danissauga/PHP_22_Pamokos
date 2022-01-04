@@ -9,18 +9,13 @@
 include (__DIR__ . '/vendor/autoload.php');
 
 use Simplon\Mysql\Mysql;
-use Simplon\Mysql\Crud\CrudModel;
-use Simplon\Mysql\Crud\CrudModelInterface;
-use Simplon\Mysql\Crud\CrudStore;
-use Simplon\Mysql\MysqlException;
-use Simplon\Mysql\QueryBuilder\CreateQueryBuilder;
-use Simplon\Mysql\QueryBuilder\DeleteQueryBuilder;
-use Simplon\Mysql\QueryBuilder\ReadQueryBuilder;
-use Simplon\Mysql\QueryBuilder\UpdateQueryBuilder;
 
-use Crud\NameStore;
-use Crud\NameModel;
-use Crud\ExampleClass;
+use Simplon\Mysql\QueryBuilder\ReadQueryBuilder;
+//use Simplon\Mysql\QueryBuilder\UpdateQueryBuilder;
+
+use Classes\Crud\NameStore;
+//use Classes\Crud\NameModel;
+use Classes\Crud\ExampleClass;
 
 $host     = "localhost";//Ip of database, in this case my host machine
 $user     = "admin";	//Username to use

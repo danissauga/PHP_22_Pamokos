@@ -6,7 +6,10 @@
         "simplon/mysql": "^2.2"
     },
     "autoload": {
-        "files": [
+        "psr-4": {
+            "Classes\\" : "classes/"
+        },
+        "___files": [
             "classes/Crud/NameStore.php",
             "classes/Crud/NameModel.php",
             "classes/Crud/ExampleClass.php"

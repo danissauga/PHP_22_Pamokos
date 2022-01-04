@@ -1,7 +1,7 @@
 {   
-    "name": "Sigita/Pamoka38",
+    "name": "sigitas/pamoka38",
     "description": "Testine aplikacija",
-    "type": "Project",
+    "type": "project",
     "require": {
         "simplon/mysql": "^2.2"
     },

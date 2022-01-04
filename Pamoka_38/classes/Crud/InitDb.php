@@ -1,10 +1,10 @@
 <?php
 
-namespace Controllers\Crud;
+namespace Classes\Crud;
 
 use Simplon\Mysql\Mysql;
 use Simplon\Mysql\QueryBuilder\CreateQueryBuilder;
-//use Simplon\Mysql\QueryBuilder\ReadQueryBuilder;
+use Simplon\Mysql\QueryBuilder\ReadQueryBuilder;
 
 class InitDb {
 
@@ -22,17 +22,9 @@ class InitDb {
 
     private function connect() {
 
-        // $host     = "localhost";//Ip of database, in this case my host machine
-        // $user     = "admin";	//Username to use
-        // $pass     = "admin";//Password for that user
-        // $dbname   = "blogas";//Name of the database
-
-        // $connection = new \PDO("mysql:host=localhost;dbname=blogas", 'root', '');
-        // $connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-
-        $connection = new \PDO("mysql:host=".HOST."dbname=".DBNAME, USER, PASS);
+        $connection = new \PDO("mysql:host=localhost;dbname=".self::DBNAME, self::USER, self::PASS);
         $connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-  
+
         $this->_mysql = new Mysql($connection);
 
     }
@@ -50,5 +42,13 @@ class InitDb {
         );
 
     }
+   public function viewData() {
+       $store = new NameStore($this->_mysql);
+       $models = $store->read(
+            (new ReadQueryBuilder())->addCondition('name', 'Kunigunda')
+);
+
+     echo $models[0]->getId(); // prints user id from first matched model
+   }
 
 }

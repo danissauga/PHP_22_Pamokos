@@ -9,7 +9,8 @@
 <body>
 
 <?php
-echo("Hello, World! LIST page");
+echo 'Įrašas!<br />';
+$this->db->viewData();
 ?>
 
 </body>

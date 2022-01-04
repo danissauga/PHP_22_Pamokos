@@ -13,7 +13,8 @@
         "___files": [
             "classes/Crud/NameStore.php",
             "classes/Crud/NameModel.php",
-            "classes/Crud/ExampleClass.php"
+            "classes/Crud/ExampleClass.php",
+            "classes/Crud/InitDb.php"
         ]
     }
 }

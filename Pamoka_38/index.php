@@ -7,8 +7,48 @@
 //});
 
 include (__DIR__ . '/vendor/autoload.php');
+use Controllers\MainController;
 
-use Simplon\Mysql\Mysql;
+//new MainController();
+
+// $router = new AltoRouter();
+// $router->setBasePath('/php-pamokos/PHP_22_Pamokos/Pamoka_38');
+// // map homepage
+
+// $router->map('GET', '/', function() {
+//         require __DIR__ . '/views/home.php';
+//      // echo 'Homepage';
+// });
+// $router->map('GET', '/list', function() {
+//         require __DIR__ . '/views/list.php';
+//      // echo 'Homepage';
+// });
+
+
+// // match current request url
+// $match = $router->match();
+
+// // call closure or throw 404 status
+// if( is_array($match) && is_callable( $match['target'] ) ) {
+// 	call_user_func_array( $match['target'], $match['params'] );
+// } else {
+// 	// no route was matched
+// 	header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+// }
+
+/*// dynamic named route
+$router->map('GET|POST', '/users/[i:id]/', function($id) {
+    $user = .....
+    require __DIR__ . '/views/user/details.php';
+}, 'user-details');*/
+
+// echo URL to user-details page for ID 5
+//echo $router->generate('user-details', ['id' => 5]); // Output: "/users/5"
+
+
+
+
+/*use Simplon\Mysql\Mysql;
 
 use Simplon\Mysql\QueryBuilder\ReadQueryBuilder;
 //use Simplon\Mysql\QueryBuilder\UpdateQueryBuilder;
@@ -71,7 +111,7 @@ $from_input = [
 //Duomenu paemimas
 $model = $store->read( new ReadQueryBuilder() );
 $duom->ViewRecord($model);
-echo '<br />';
+echo '<br />';*/
 
 
 

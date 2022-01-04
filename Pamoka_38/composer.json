@@ -3,7 +3,8 @@
     "description": "Testine aplikacija",
     "type": "project",
     "require": {
-        "simplon/mysql": "^2.2"
+        "simplon/mysql": "^2.2",
+        "altorouter/altorouter": "^2.0"
     },
     "autoload": {
         "psr-4": {

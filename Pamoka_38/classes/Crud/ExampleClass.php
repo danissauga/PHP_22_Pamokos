@@ -1,6 +1,6 @@
 <?php
 
-namespace Crud;
+namespace Classes\Crud;
 
 class ExampleClass {
 

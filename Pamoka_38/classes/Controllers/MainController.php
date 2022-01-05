@@ -17,10 +17,16 @@ class MainController {
         require __DIR__ . '/../../views/home.php';
         });
         $this->router->map('GET', '/add', function() {
-        require __DIR__ . '/../../views/add.php';
+        require __DIR__ . '/../../views/addGoods.php';
         });
-        $this->router->map('GET', '/list', function() {
-        require __DIR__ . '/../../views/list.php';
+        $this->router->map('GET', '/dit', function() {
+        require __DIR__ . '/../../views/editGoods.php';
+        });
+        $this->router->map('GET', '/login', function() {
+        require __DIR__ . '/../../views/login.php';
+        });
+        $this->router->map('GET', '/cart', function() {
+        require __DIR__ . '/../../views/cart.php';
         });
 
         $match = $this->router->match();
@@ -35,4 +41,4 @@ class MainController {
     }
 
 
-} 
+}

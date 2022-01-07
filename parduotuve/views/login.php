@@ -1,10 +1,13 @@
 <?php
 include("views/header.php");
 include("views/meniu.php");
+if (isset($_POST['go'])) {
+    print_r($_POST);
+}
 ?>
     <div class="container h-75">
              <div class="row h-75 justify-content-center align-items-center">
-                    <form id="login" class="col-5" action="login" name="login" method="POST" enctype="multipart/form-data">
+                    <form id="loginas" class="col-5" action="login" name="loginas" method="POST" enctype="multipart/form-data">
                          <h1 class="h3 mb-3 fw-normal">Vartotojo prisijungimas</h1>
                         <div class="form-floating mb-3">
                             <input type="email" name="uname" class="form-control" id="floatingInput" placeholder="name@example.com">

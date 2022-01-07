@@ -1,5 +1,5 @@
 <?php
-namespace Classes/Models
+namespace Classes\Models;
 
 class Login {
 

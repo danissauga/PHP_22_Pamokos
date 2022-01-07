@@ -19,7 +19,7 @@
                         <form method="POST" style="float:right;">
                                     <a class="btn btn-success" href="cart" role="button"><i class="fas fa-shopping-cart"></i></a>
                                     <a class="btn btn-success" href="login" role="button"><i class="fas fa-sign-in-alt"></i></a>
-                                    <a class="btn btn-success" href="logout" role="button"><i class="fas fa-sign-out-alt"></i></a>
+                                    <button name="logoff" class="btn btn-success" type="submit"><i class="fas fa-sign-out-alt"></i></button>
                         </form>
                     </li>
                 </ul>

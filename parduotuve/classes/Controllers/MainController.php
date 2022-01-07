@@ -9,9 +9,9 @@ class MainController {
 
     public function __construct()
     {
-       // $this->db = new InitDb();
-        $this->router = new \AltoRouter(); 
-        $this->router->setBasePath('/ingos_parduotuve/Bankas/Paskaitos/2022-01-05');
+        $this->router = new \AltoRouter();
+        //$this->router->setBasePath($this->urlaub);
+       $this->router->setBasePath('/php-pamokos/PHP_22_Pamokos/parduotuve');
 
             $this->router->map('GET', '/', function() {
             require __DIR__ . '/../../views/home.php';
@@ -28,7 +28,7 @@ class MainController {
             $this->router->map('GET', '/edit', function() {
             require __DIR__ . '/../../views/editGoods.php';
             });
-            $this->router->map('GET', '/login', function() {
+            $this->router->map('GET|POST', '/login', function() {
             require __DIR__ . '/../../views/login.php';
             });
              $this->router->map('GET', '/logout', function() {
@@ -49,7 +49,7 @@ class MainController {
         }
         echo '<pre>';
        // print_r($match);
-      //  print_r($_POST);
+     // echo ($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
     }
 
 

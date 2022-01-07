@@ -11,7 +11,7 @@ class MainController {
     {
        // $this->db = new InitDb();
         $this->router = new \AltoRouter(); 
-        $this->router->setBasePath('/php-pamokos/PHP_22_Pamokos/parduotuve');
+        $this->router->setBasePath('/ingos_parduotuve/Bankas/Paskaitos/2022-01-05');
 
             $this->router->map('GET', '/', function() {
             require __DIR__ . '/../../views/home.php';

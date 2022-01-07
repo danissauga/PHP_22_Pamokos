@@ -1,27 +1,14 @@
 <?php
 include("views/header.php");
 include("views/meniu.php");
-if (isset($_POST['go'])) {
-    print_r($_POST);
+$login = new Classes\Models\Login();
+print_r($login->users);
+if (isset($_POST['logoff'])) {$login->logoff(); }
+if (isset($_POST['go']) and (isset($_POST['uname'])) and (isset($_POST['upass']))) {$login->log_me_in($_POST);}
+if (!$login->is_logged_in()) {
+    $login->login_form();
+} else {
+    $login->logged_in();
 }
-?>
-    <div class="container h-75">
-             <div class="row h-75 justify-content-center align-items-center">
-                    <form id="loginas" class="col-5" action="login" name="loginas" method="POST" enctype="multipart/form-data">
-                         <h1 class="h3 mb-3 fw-normal">Vartotojo prisijungimas</h1>
-                        <div class="form-floating mb-3">
-                            <input type="email" name="uname" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">El. pašto adresas</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="password" name="upass" class="form-control" id="floatingPassword" placeholder="Slaptažodis">
-                            <label for="floatingPassword">Slaptažodis</label>
-                        </div>
-                        <div class="checkbox mb-3">
-                        </div>
-                        <button name="go" class="w-100 btn btn-lg btn-primary" type="submit">Prisijungti</button>
-                    </form>
-             </div>
-    </div>
-<?php
+
 include("views/footer.php");

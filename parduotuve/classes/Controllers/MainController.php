@@ -13,16 +13,25 @@ class MainController {
         $this->router = new \AltoRouter(); 
         $this->router->setBasePath('/php-pamokos/PHP_22_Pamokos/parduotuve');
 
-        $this->router->map('GET', '/', function() {
+            $this->router->map('GET', '/', function() {
+            require __DIR__ . '/../../views/home.php';
+            });
+             $this->router->map('GET', '/index.php', function() {
+            require __DIR__ . '/../../views/home.php';
+            });
+            $this->router->map('GET', '/list', function() {
             require __DIR__ . '/../../views/home.php';
             });
             $this->router->map('GET', '/add', function() {
             require __DIR__ . '/../../views/addGoods.php';
             });
-            $this->router->map('GET', '/dit', function() {
+            $this->router->map('GET', '/edit', function() {
             require __DIR__ . '/../../views/editGoods.php';
             });
             $this->router->map('GET', '/login', function() {
+            require __DIR__ . '/../../views/login.php';
+            });
+             $this->router->map('GET', '/logout', function() {
             require __DIR__ . '/../../views/login.php';
             });
             $this->router->map('GET', '/cart', function() {
@@ -37,7 +46,6 @@ class MainController {
         } else {
             // no route was matched
             require __DIR__ . '/../../views/error404.php';
-            //header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
         }
     }
 

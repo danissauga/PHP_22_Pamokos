@@ -1,19 +1,13 @@
-<?php
-include("views/header.php");
-include("views/meniu.php");
-?>
-
 <main class="page">
-    <section class="portfolio-block project">
+<section class="portfolio-block project">
         <div class="container">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3>Pridėti prekes</h3>
+                            <h3>Prekių sąrašas</h3>
                         </div>
                     </div>
                 </div>
-
             <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -28,20 +22,18 @@ include("views/meniu.php");
                                             <th class="text-center filter-false sorter-false">&nbsp;</th>
                                         </tr>
                                     </thead>
-                                    <!--<tbody class="text-center">
+                                    <tbody class="text-center">
 
 
-                                        
-                                    </tbody>-->
+
+
+
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-    </section>
+       </div>
+</section>
 </main>
-
-
-<?php
-include("views/footer.php");

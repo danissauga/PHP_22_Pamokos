@@ -1,7 +1,5 @@
 <?php
 include("views/header.php");
 include("views/meniu.php");
-
-echo 'putt content inside';
-
+include("views/list.php");
 include("views/footer.php");

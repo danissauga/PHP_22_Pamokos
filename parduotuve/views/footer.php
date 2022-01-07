@@ -2,7 +2,7 @@
     <div class="row">
     <footer class="page-footer">
             <div class="container">
-                <div class="links"><a href="#">Apie projektą</a><a href="#">Autoriai</a><a href="#">BDAR</a></div>
+                <div class="links">Visos teisės saugomos 2022 &copy; "e-parduotuvė"</div>
             </div>
     </footer>
     </div>
